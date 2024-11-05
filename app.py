@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from transformers import pipeline
+import os
 
 app = Flask(__name__)
 
@@ -20,4 +21,4 @@ def categorize():
     return jsonify({"category": category})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 80)))
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 80)))  # Cambiado a puerto 80
